@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, ExternalLink } from 'lucide-react';
 import profileImage from '../assets/Image.jpg';
+import resume from '../assets/Ande Lakshmi Subhash Resume.pdf'
 
 const Hero: React.FC = () => {
   const [currentText, setCurrentText] = useState('');
@@ -158,14 +159,19 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-            >
-              <Download size={20} />
-              Download Resume
-            </motion.button>
+           <motion.div
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+>
+  <a
+    href={resume}
+    download="Ande_Lakshmi_Subhash_Resume.pdf"
+    className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+  >
+    <Download size={20} />
+    Download Resume
+  </a>
+</motion.div>
             
             <motion.button
               whileHover={{ scale: 1.05 }}

@@ -13,10 +13,11 @@ import Footer from './components/Footer';
 import bgImage from './assets/Background.jpg';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
+    document.documentElement.classList.add('dark');
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
     };

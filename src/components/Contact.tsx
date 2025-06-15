@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -17,15 +18,26 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate form submission
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  emailjs.send(
+    'service_6ho55aw',        // Replace with your actual service ID
+    'template_ju85908',       // Replace with your actual template ID
+    formData,
+    'DrZ7rFmVh0QqJpMHI'    // Replace with your public key from EmailJS dashboard
+  )
+  .then((response) => {
+    console.log('SUCCESS!', response.status, response.text);
     setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
-  };
+    setFormData({ name: '', email: '', message: '' });
+    setTimeout(() => setIsSubmitted(false), 3000);
+  })
+  .catch((err) => {
+    console.log('FAILED...', err);
+  });
+};
+
 
   const contactInfo = [
     {

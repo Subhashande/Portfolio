@@ -77,15 +77,20 @@ const About: React.FC = () => {
                   industry best practices.
                 </p>
               </div>
-
+{/* 
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="inline-block"
               >
-                <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                  Let's Connect
-                </button>
-              </motion.div>
+                  <a
+                    href="https://www.linkedin.com/in/lakshmisubhash-ande"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    Let's Connect
+                  </a>
+              </motion.div> */}
             </motion.div>
 
             {/* Stats Grid */}
